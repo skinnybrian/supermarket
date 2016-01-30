@@ -1,17 +1,19 @@
 class Cart
 
     def initialize
-        @total = 0
         @items = []
     end
 
     def add(item)
-        @total += item.price
         @items.push(item)
     end
 
     def total
-        @total
+        price_total = 0
+        @items.each do |n|
+            price_total += n.price
+        end
+        price_total
     end
 
     def items
