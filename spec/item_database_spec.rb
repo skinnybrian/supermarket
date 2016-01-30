@@ -1,17 +1,18 @@
 require 'item'
 require 'item_database'
 
-RSpec.describe ItemDetabase do
+RSpec.describe ItemDatabase do
     it do
         apple = Item.new('Apple', 100)
         banana = Item.new('Banana', 50)
 
-        db = ItemDetabase.new
+        db = ItemDatabase.new
         db.add(apple)
         db.add(banana)
 
         expect(db.find('Apple')).to eq(apple)
         expect(db.find('Banana')).to eq(banana)
+        expect(db.find('Orange')).to eq(nil)
     end
 end
         
